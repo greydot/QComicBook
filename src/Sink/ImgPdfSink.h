@@ -16,7 +16,7 @@
 #include "ImgSink.h"
 #include <QStringList>
 #include <QMutex>
-#include <poppler-qt5.h>
+#include <poppler-qt6.h>
 
 namespace QComicBook
 {

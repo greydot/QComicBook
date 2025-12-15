@@ -12,7 +12,7 @@
 
 #include "ImgPdfSink.h"
 #include "../Page.h"
-#include <QX11Info>
+#include <QGuiApplication>
 #include <QFileInfo>
 #include <QMutexLocker>
 
@@ -58,6 +58,7 @@ QImage ImgPdfSink::image(unsigned int num, int &result)
 {
 	result = 1;
 	QMutexLocker lock(&docmtx);
+    QGuiApplication *app = QGuiApplication
 	if (pdfdoc)
 	{
 		Poppler::Page* pdfpage = pdfdoc->page(num);
