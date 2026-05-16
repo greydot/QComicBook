@@ -56,7 +56,7 @@ qt6_wrap_ui(qcomicbook_ui_src ${qcomicbook_ui})
 
 ADD_EXECUTABLE(qcomicbook ${qcomicbook_src} ${qcomicbook_moc_src} ${qcomicbook_ui_src} ${qcomicbook_res})
 ADD_DEPENDENCIES(qcomicbook translations)
-TARGET_LINK_LIBRARIES(qcomicbook Qt6::Widgets Qt6::PrintSupport)
+TARGET_LINK_LIBRARIES(qcomicbook Qt6::Widgets Qt6::PrintSupport Qt6::Core5Compat)
 TARGET_LINK_LIBRARIES(qcomicbook ${POPPLER_LIBRARIES})
 
 INSTALL(TARGETS qcomicbook DESTINATION bin)

@@ -23,7 +23,7 @@ namespace QComicBook
 	class ImgPdfSink: public ImgSink
 	{
 		public:
-			ImgPdfSink(int cacheSize=0);
+			ImgPdfSink(QWidget *parent, int cacheSize=0);
 			~ImgPdfSink();
 
 			int open(const QString &path);
@@ -41,8 +41,9 @@ namespace QComicBook
 			QString getPrevious() const { return ""; }
 
 		private:
-			Poppler::Document *pdfdoc;
+			std::unique_ptr<Poppler::Document> pdfdoc;
 			mutable QMutex docmtx; //!< mutex for pdf document
+            QWidget *parent_;
 	};
 }
 

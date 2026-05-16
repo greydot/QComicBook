@@ -762,8 +762,8 @@ void ComicMainWindow::open(const QString &path, int page)
 
         closeSink();
 
-        sink = ImgSinkFactory::instance().createImgSink(path);
-	sink->setCacheSize(cfg->cacheSize()*1024*1024, cfg->cacheAutoAdjust());
+        sink = ImgSinkFactory::instance().createImgSink(path, static_cast<QWidget*>(this));
+        sink->setCacheSize(cfg->cacheSize()*1024*1024, cfg->cacheAutoAdjust());
 
         pageLoader->setSink(sink);
         thumbnailLoader->setSink(sink);
